@@ -16,7 +16,7 @@ campos = campos.split(';')
 for variavel in range(indice, numero_de_linhas):
     a1 = sheet['A{}'.format(numero_de_linhas)]
     print('{}'.format(a1.value))
-print(campos[0])
+print(campos)
 
 #a1 = sheet['A2'].value
 #print(a1)
