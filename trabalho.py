@@ -1,45 +1,22 @@
 import pandas as pd
 import numpy as np
+import time
+import timeit
 
 arquivo = pd.read_csv('dados2.csv', sep=";")
-tam_arquivo =  len(arquivo)
 
+inicio = timeit.default_timer()
+crescente_acession_quickSort = arquivo.sort_values( by='Acession', ascending=True, inplace=False, kind='quicksort', na_position='last')
+fim = timeit.default_timer()
+print("O tempo de execução da função quickSort ascendente no campo ACESSION foi de:{} ".format(fim - inicio))
 
-lines = arquivo.values
-sort_decrescente = []
+inicio = timeit.default_timer()
+decrescente_acession_quickSort = arquivo.sort_values( by='Acession', ascending=False, inplace=False, kind='quicksort', na_position='last')
+fim = timeit.default_timer()
+print("O tempo de execução da função quickSort descendente no campo ACESSION foi de: {}".format(fim - inicio))
 
-def sort_ascendente(lines):
-    
-    menor = 'AAAAAAAA'   
-    sort_crescente = []
-
-    for line in lines:
-        if(line[0] > menor): #Se a linha for maior que o menor
-            menor = line[0]  #Então a linha é o proximo menor
-            sort_crescente.append(line) #Acrescento na lista de menores
-    return (sort_crescente)
-
-
-def sort_decendente(lines):
-
-      
-    sort_decrescente = []
-    maior = ''
-    
-    for line in lines:
-        if( maior == '' ):
-            maior = line[0]
-        elif( maior > line[0]):
-            maior = line[0]
-        
-           
-
-    return (sort_decrescente)
-
-    
-
-crescente = sort_ascendente(lines)
-decrescente = sort_decendente(lines)
-        
-        
-    
+inicio = timeit.default_timer()
+decrescente_date_quickSort = arquivo.sort_values( by='Date', ascending=False, inplace=False, kind='quicksort', na_position='last')
+fim = timeit.default_timer()
+print("O tempo de execução da função quickSort descendente no campo DATE foi de: {}".format(fim - inicio))
+print(' \n')
