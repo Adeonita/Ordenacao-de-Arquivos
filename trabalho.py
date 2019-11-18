@@ -20,9 +20,26 @@ def sort_ascendente(lines):
     return (sort_crescente)
 
 
+def sort_decendente(lines):
+
+      
+    sort_decrescente = []
+    maior = ''
+    
+    for line in lines:
+        if( maior == '' ):
+            maior = line[0]
+        elif( maior > line[0]):
+            maior = line[0]
         
+           
+
+    return (sort_decrescente)
+
+    
+
 crescente = sort_ascendente(lines)
-print(crescente)
+decrescente = sort_decendente(lines)
         
         
     
